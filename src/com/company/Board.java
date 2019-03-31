@@ -48,6 +48,7 @@ public abstract class Board {
      * dealing some cards to this board.
      */
     public void newGame() {
+        deck.reset();
         deck.shuffle();
         dealMyCards();
     }
@@ -59,7 +60,9 @@ public abstract class Board {
      * @return the size of the board
      */
     public int size() {
+        //System.out.println("trial: "+cards.length);
         return cards.length;
+
     }
 
     /**
@@ -86,7 +89,7 @@ public abstract class Board {
 
     /**
      * Accesses the deck's size.
-     * @return the number of undealt cards left in the deck.
+     * @return the number of undealt cards le   ft in the deck.
      */
     public int deckSize() {
         return deck.size();
@@ -98,6 +101,9 @@ public abstract class Board {
      * @param k is the board position of the card to return.
      */
     public Card cardAt(int k) {
+        if(k >= size()){
+            //System.out.println(k);
+        }
         return cards[k];
     }
 
@@ -148,13 +154,19 @@ public abstract class Board {
      */
     public boolean gameIsWon() {
         if (deck.isEmpty()) {
+            //System.out.println("deck is empty");
+            int count = 0;
             for (Card c : cards) {
                 if (c != null) {
+                    //System.out.println("cards not null");
                     return false;
                 }
             }
             return true;
         }
+
+        //System.out.println("deck size " + deck.size());
+
         return false;
     }
 

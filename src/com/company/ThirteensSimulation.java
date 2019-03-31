@@ -9,7 +9,7 @@ public class ThirteensSimulation {
     /**
      * The number of games of Thirteens to play.
      */
-    private static final int GAMES_TO_PLAY = 1000;
+    private static final int GAMES_TO_PLAY = 100;
 
     /**
      * Flag used to control debugging print statements.
@@ -43,5 +43,7 @@ public class ThirteensSimulation {
         System.out.println("Games won:    " + wins);
         System.out.println("Games played: " + GAMES_TO_PLAY);
         System.out.println("Percent won:  " + percentWon + "%");
+
+
     }
 }
